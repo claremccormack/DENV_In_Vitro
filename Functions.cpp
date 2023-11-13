@@ -551,38 +551,7 @@ void Allocate_Memory(fit_params Fit, int n_expt, expt*Expt) {
 					
 				}
 
-				///*Expt[i].Pop[j].Hosts_Avg[n].T = new long double* [STEPS];
-				//for (int t = 0;t < STEPS;t++) {
-				//	Expt[i].Pop[j].Hosts_Avg[n].T[t] = new long double[2];
-				//}*/
-
-				//Expt[i].Pop[j].Hosts_Avg[n].E = new long double* [STEPS];
-				//for (int t = 0; t < STEPS; t++) {
-				//	Expt[i].Pop[j].Hosts_Avg[n].E[t] = new long double[2];
-				//}
-
-				//Expt[i].Pop[j].Hosts_Avg[n].I = new long double* [STEPS];
-				//for (int t = 0; t < STEPS; t++) {
-				//	Expt[i].Pop[j].Hosts_Avg[n].I[t] = new long double[2];
-				//}
-
-				///*Expt[i].Pop[j].Hosts_Avg[n].X = new long double* [STEPS];
-				//for (int t = 0; t < STEPS; t++) {
-				//	Expt[i].Pop[j].Hosts_Avg[n].X[t] = new long double[2];
-				//}
-
-				//Expt[i].Pop[j].Hosts_Avg[n].V = new long double* [STEPS];
-				//for (int t = 0;t < STEPS;t++) {
-				//	Expt[i].Pop[j].Hosts_Avg[n].V[t] = new long double[2];
-				//}
-
-				//Expt[i].Pop[j].Hosts_Avg[n].D = new long double* [STEPS];
-				//for (int t = 0;t < STEPS;t++) {
-				//	Expt[i].Pop[j].Hosts_Avg[n].D[t] = new long double[2];
-				//}*/
-
-				//cout << "test" << endl;
-
+				
 				Expt[i].Pop[j].Hosts[n].PK.A1 = new double** [Fit.no_particles];
 				for (int m = 0; m < Fit.no_particles;m++) {
 					Expt[i].Pop[j].Hosts[n].PK.A1[m] = new double* [STEPS];
@@ -593,72 +562,13 @@ void Allocate_Memory(fit_params Fit, int n_expt, expt*Expt) {
 	
 			}
 
-			//Expt[i].Pop[j].Avg.T = new long double* [STEPS];
-			//for (int t = 0;t < STEPS;t++) {
-			//	Expt[i].Pop[j].Avg.T[t] = new long double[2];
-			//}
-
-			//Expt[i].Pop[j].Avg.E = new long double* [STEPS];
-			//for (int t = 0; t < STEPS; t++) {
-			//	Expt[i].Pop[j].Avg.E[t] = new long double[2];
-			//}
-
-			//Expt[i].Pop[j].Avg.I = new long double* [STEPS];
-			//for (int t = 0; t < STEPS; t++) {
-			//	Expt[i].Pop[j].Avg.I[t] = new long double[2];
-			//}
-			//
-			//Expt[i].Pop[j].Avg.X = new long double* [STEPS];
-			//for (int t = 0; t < STEPS; t++) {
-			//	Expt[i].Pop[j].Avg.X[t] = new long double[2];
-			//}
-
-			//Expt[i].Pop[j].Avg.V = new long double* [STEPS];
-			//for (int t = 0;t < STEPS;t++) {
-			//	Expt[i].Pop[j].Avg.V[t] = new long double[2];
-			//}
-
-			//Expt[i].Pop[j].Avg.D = new long double* [STEPS];
-			//for (int t = 0;t < STEPS;t++) {
-			//	Expt[i].Pop[j].Avg.D[t] = new long double[2];
-			//}
-
+			
 
 		}
 	
 	}
 
-	/*initialise arrays*/
 
-	//for (int i = 0; i < n_expt;i++) {
-
-	//	for (int j = 0; j < Expt[i].no_groups;j++) {
-
-	//		for (int n = 0; n < Expt[i].Pop[j].no_hosts; n++) {
-
-	//			for (int t = 0; t < STEPS;t++) {
-
-	//				for (int s = 0; s < 2;s++) {
-
-	//					Expt[i].Pop[j].Hosts_Avg[n].T[t][s] = 0;
-	//					Expt[i].Pop[j].Hosts_Avg[n].E[t][s] = 0;
-	//					Expt[i].Pop[j].Hosts_Avg[n].I[t][s] = 0;
-	//					Expt[i].Pop[j].Hosts_Avg[n].V[t][s] = 0;
-	//					Expt[i].Pop[j].Hosts_Avg[n].X[t][s] = 0;
-	//					Expt[i].Pop[j].Hosts_Avg[n].D[t][s] = 0;
-	//					
-	//					Expt[i].Pop[j].Avg.T[t][s] = 0;
-	//					Expt[i].Pop[j].Avg.E[t][s] = 0;
-	//					Expt[i].Pop[j].Avg.I[t][s] = 0;
-	//					Expt[i].Pop[j].Avg.X[t][s] = 0;
-	//					Expt[i].Pop[j].Avg.V[t][s] = 0;
-	//					Expt[i].Pop[j].Avg.D[t][s] = 0;
-	//					
-	//				}
-	//			}
-	//		}
-	//	}
-	//}
 }
 
 void Init_Values(host& Host, int M, model_type model) {
@@ -1180,114 +1090,6 @@ double Calculate_Rt(host& Host, int t, model_type model) {
 
 	return Rt;
 
-}
-
-void Simulate_Data(expt* Expt, fit_params Fit, param_vary& Param_Vary, model_type model) {
-
-	/*for each host, run model*/
-
-//	for (int i = 0; i < model.n_expt; i++) {
-//
-//		for (int j = 0; j < Expt[i].no_groups; j++) {
-//
-//			for (int n = 0; n < Expt[i].Pop[j].no_hosts; n++) {
-//
-//				if (model.hierarchical == 1) { Sample_Parameter_Values(Param_Vary, Expt[i].Pop[j].Hosts[n]); }
-//		
-//				Init_Values(Expt[i].Pop[j].Hosts[n], Fit.no_particles, model);
-//			
-//				Drug_Dosage(Expt[i].Pop[j].Hosts[n], model);
-//			
-//				Within_Host_Model(Expt[i].Pop[j].Hosts[n], 0, 0, STEPS - 2, RUNS, model);
-//
-//			}
-//		}
-//	}
-//
-///*generate simulated dataset*/
-//
-//	int s, t_start, t_end;
-//
-//	for (int i = 0; i < model.n_expt; i++) {
-//
-//		for (int j = 0; j < Expt[i].no_groups; j++) {
-//
-//			for (int n = 0; n < Expt[i].Pop[j].no_hosts; n++) {
-//
-//				Expt[i].Pop[j].Hosts[n].id = to_string(n + 1);
-//				Expt[i].Pop[j].Hosts[n].Data.no_measurement_times = 0;
-//
-//				s = 0;
-//
-//				t_start = int(24 * (RUN_IN)+2 * 24);
-//
-//				t_end = int(t_start + 24 * 15);
-//
-//				for (int t = t_start; t < t_end; t++) {
-//
-//					if (t % 48 == 0) {
-//
-//						Expt[i].Pop[j].Hosts[n].Data.no_measurement_times += 1;
-//						Expt[i].Pop[j].Hosts[n].Data.Time[s] = t - 24 * RUN_IN;
-//
-//						Expt[i].Pop[j].Hosts[n].Data.D[s] = na;
-//
-//					if (Expt[i].Pop[j].Hosts[n].V[0][t][0] == 0 || log10(Expt[i].Pop[j].Hosts[n].V[0][t][0]) < log10(Expt[i].Pop[j].Hosts[n].Data.lod_v)) {
-//
-//							Expt[i].Pop[j].Hosts[n].Data.V[s] = log10(Expt[i].Pop[j].Hosts[n].Data.lod_v);
-//
-//						}
-//
-//						else {
-//
-//							Expt[i].Pop[j].Hosts[n].Data.V[s] = log10(Expt[i].Pop[j].Hosts[n].V[0][t][0]);
-//
-//						}
-//
-//						if (Expt[i].Pop[j].Hosts[n].M[0][t][0] == 0 || (Expt[i].Pop[j].Hosts[n].scaling_IgM * Expt[i].Pop[j].Hosts[n].M[0][t][0] <Expt[i].Pop[j].Hosts[n].Data.lod_m)) {
-//
-//							Expt[i].Pop[j].Hosts[n].Data.M[s] = Expt[i].Pop[j].Hosts[n].Data.lod_m;
-//
-//						}
-//
-//						else {
-//
-//							Expt[i].Pop[j].Hosts[n].Data.M[s] = Expt[i].Pop[j].Hosts[n].scaling_IgM*Expt[i].Pop[j].Hosts[n].M[0][t][0];
-//						}
-//
-//						if (Expt[i].Pop[j].Hosts[n].G[0][t][0] == 0 || (Expt[i].Pop[j].Hosts[n].scaling_IgG * Expt[i].Pop[j].Hosts[n].G[0][t][0] < Expt[i].Pop[j].Hosts[n].Data.lod_g)) {
-//
-//							Expt[i].Pop[j].Hosts[n].Data.G[s] = Expt[i].Pop[j].Hosts[n].Data.lod_g;
-//
-//						}
-//
-//						else {
-//
-//							Expt[i].Pop[j].Hosts[n].Data.G[s] = Expt[i].Pop[j].Hosts[n].scaling_IgG * Expt[i].Pop[j].Hosts[n].G[0][t][0];
-//						}
-//
-//						Expt[i].Pop[j].Hosts[n].Data.I[s] = na;
-//						Expt[i].Pop[j].Hosts[n].Data.N[s] = na;
-//
-//						if (model.type == 0) {
-//
-//							if (Expt[i].Pop[j].Hosts[n].I[0][t][0] == 0 || log10(Expt[i].Pop[j].Hosts[n].I[0][t][0]) < log10(Expt[i].Pop[j].Hosts[n].Data.lod_v)) {
-//
-//								Expt[i].Pop[j].Hosts[n].Data.I[s] = log10(Expt[i].Pop[j].Hosts[n].Data.lod_v);
-//							}
-//
-//							else {
-//
-//								Expt[i].Pop[j].Hosts[n].Data.I[s] = log10(Expt[i].Pop[j].Hosts[n].I[0][t][0]);
-//							}
-//						}
-//
-//					s = s + 1;
-//					}
-//				}
-//			}
-//		}
-//	}
 }
 
 void Transform_Values(expt* Expt, fit_params Fit, int length, model_type model) {
